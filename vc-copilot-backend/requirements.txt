@@ -1,0 +1,25 @@
+# vc-copilot-backend/requirements.txt
+
+# FastAPI essentials
+fastapi
+uvicorn[standard]
+pydantic
+pydantic-settings
+python-multipart
+
+# File Processing
+pdfminer.six
+python-pptx
+
+# ML and NLP
+sentence-transformers
+transformers
+torch
+textstat
+pandas
+numpy
+scikit-learn
+
+# AI and Environment
+google-generativeai
+python-dotenv
