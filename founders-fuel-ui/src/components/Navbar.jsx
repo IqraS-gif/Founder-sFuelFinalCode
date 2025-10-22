@@ -154,7 +154,7 @@ const Navbar = () => {
       <NavLinks>
         <StyledLink href="#">Home</StyledLink>
         <StyledLink href="#">About</StyledLink>
-        <StyledLink href="#">Contact</StyledLink>
+        <StyledLink href="#">Features</StyledLink>
         <CtaButton>Get Started</CtaButton>
       </NavLinks>
     </NavContainer>
