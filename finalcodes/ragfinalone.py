@@ -1248,6 +1248,7 @@ from urllib.parse import urlparse
 import pyttsx3
 import threading
 import queue
+import os
 
 # Configure logging with DEBUG level
 logging.basicConfig(
@@ -1261,7 +1262,10 @@ logging.basicConfig(
 logger = logging.getLogger(__name__)
 
 # Load environment variables
-load_dotenv()
+# load_dotenv()
+gemini_key = os.getenv("GEMINI_API_KEY")
+serpapi_key = os.getenv("SERPAPI_API_KEY")
+pinecone_key = os.getenv("PINECONE_API_KEY")
 
 class OptimizedStartupRAGEvaluator:
     def __init__(self):

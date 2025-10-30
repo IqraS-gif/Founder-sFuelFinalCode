@@ -353,3 +353,170 @@
 2025-10-30 14:27:50,532 - git.cmd - DEBUG - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=C:\Users\iqras\OneDrive\Desktop\FoundersFuelFrontend, stdin=None, shell=False, universal_newlines=False)
 2025-10-30 14:27:50,751 - git.cmd - DEBUG - Popen(['git', 'cat-file', '--batch-check'], cwd=C:\Users\iqras\OneDrive\Desktop\FoundersFuelFrontend, stdin=<valid stream>, shell=False, universal_newlines=False)
 2025-10-30 14:27:50,867 - git.cmd - DEBUG - Popen(['git', 'rev-list', 'origin/main..main', '--'], cwd=C:\Users\iqras\OneDrive\Desktop\FoundersFuelFrontend, stdin=None, shell=False, universal_newlines=False)
+2025-10-30 15:26:07,652 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-10-30 15:26:07,654 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-10-30 15:26:07,663 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-10-30 15:26:09,214 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 307 0
+2025-10-30 15:26:09,237 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json HTTP/1.1" 200 0
+2025-10-30 15:26:09,554 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 307 0
+2025-10-30 15:26:09,571 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-10-30 15:26:09,854 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 307 0
+2025-10-30 15:26:09,866 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-10-30 15:26:10,162 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 307 0
+2025-10-30 15:26:10,174 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md HTTP/1.1" 200 0
+2025-10-30 15:26:10,468 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 307 0
+2025-10-30 15:26:10,479 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json HTTP/1.1" 200 0
+2025-10-30 15:26:10,776 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 307 0
+2025-10-30 15:26:10,787 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json HTTP/1.1" 200 0
+2025-10-30 15:26:11,083 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-10-30 15:26:11,322 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 307 0
+2025-10-30 15:26:11,336 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json HTTP/1.1" 200 0
+2025-10-30 15:26:12,619 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 307 0
+2025-10-30 15:26:12,644 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json HTTP/1.1" 200 0
+2025-10-30 15:26:13,030 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json HTTP/1.1" 307 0
+2025-10-30 15:26:13,051 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json HTTP/1.1" 200 0
+2025-10-30 15:26:13,342 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6876
+2025-10-30 15:26:13,423 - comtypes - DEBUG - CoInitializeEx(None, 2)
+2025-10-30 15:26:13,598 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\iqras\\AppData\\Roaming\\Python\\Python313\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-10-30 15:26:13,600 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\iqras\AppData\Roaming\Python\Python313\site-packages\comtypes\gen'
+2025-10-30 15:26:13,804 - comtypes.client._create - DEBUG - SAPI.SPVoice -> {96749377-3391-11D2-9EE3-00C04F797396}
+2025-10-30 15:26:13,806 - comtypes.client._create - DEBUG - CoCreateInstance({96749377-3391-11D2-9EE3-00C04F797396}, clsctx=None, interface=None)
+2025-10-30 15:26:13,858 - comtypes.client._managing - DEBUG - GetBestInterface(<POINTER(IUnknown) ptr=0x1f4fee99db0 at 1f4c01b6950>)
+2025-10-30 15:26:13,859 - comtypes.client._managing - DEBUG - Does implement IProvideClassInfo
+2025-10-30 15:26:13,870 - comtypes.client._managing - DEBUG - Default interface is {269316D8-57BD-11D2-9EEE-00C04F797396}
+2025-10-30 15:26:13,872 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IUnknown) ptr=0x1f4fee99df0 at 1f4c0c1f2d0>
+2025-10-30 15:26:13,873 - comtypes.client._generate - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2025-10-30 15:26:13,875 - comtypes.client._managing - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechVoice'>
+2025-10-30 15:26:13,876 - comtypes.client._managing - DEBUG - Final result is <POINTER(ISpeechVoice) ptr=0x1f4fee99df0 at 1f4c0c1f250>
+2025-10-30 15:26:13,880 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IProvideClassInfo) ptr=0x1f4fee99e10 at 1f4c0c1eed0>
+2025-10-30 15:26:13,881 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ITypeInfo) ptr=0x1f4bf55b018 at 1f4c0c1ef50>
+2025-10-30 15:26:13,883 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ITypeInfo) ptr=0x1f4bf55b070 at 1f4c0c1ecd0>
+2025-10-30 15:26:13,884 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ITypeLib) ptr=0x1f4bba10990 at 1f4c0c1f2d0>
+2025-10-30 15:26:13,885 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IUnknown) ptr=0x1f4fee99db0 at 1f4c01b6950>
+2025-10-30 15:26:13,888 - comtypes.client._events - DEBUG - <POINTER(ISpeechVoice) ptr=0x1f4fee99df0 at 1f4c0c1f250> using sinkinterface from clsid <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4._ISpeechVoiceEvents'>
+2025-10-30 15:26:13,889 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IProvideClassInfo2) ptr=0x1f4fee99e10 at 1f4c01b6950>
+2025-10-30 15:26:13,892 - comtypes._vtbl - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001F4C06223C0>: _ISpeechVoiceEvents.VoiceChange not implemented
+2025-10-30 15:26:13,893 - comtypes._vtbl - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001F4C06223C0>: _ISpeechVoiceEvents.Bookmark not implemented
+2025-10-30 15:26:13,896 - comtypes._vtbl - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001F4C06223C0>: _ISpeechVoiceEvents.Sentence not implemented
+2025-10-30 15:26:13,898 - comtypes._vtbl - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001F4C06223C0>: _ISpeechVoiceEvents.Phoneme not implemented
+2025-10-30 15:26:13,900 - comtypes._vtbl - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001F4C06223C0>: _ISpeechVoiceEvents.Viseme not implemented
+2025-10-30 15:26:13,903 - comtypes._vtbl - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001F4C06223C0>: _ISpeechVoiceEvents.AudioLevel not implemented
+2025-10-30 15:26:13,904 - comtypes._vtbl - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001F4C06223C0>: _ISpeechVoiceEvents.EnginePrivate not implemented
+2025-10-30 15:26:13,906 - comtypes.client._events - DEBUG - Start advise <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4._ISpeechVoiceEvents'>
+2025-10-30 15:26:13,907 - comtypes._comobject - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001F4C06223C0>.QueryInterface({A372ACD1-3BEF-4BBD-8FFB-CB3E2B416AF8}) -> S_OK
+2025-10-30 15:26:13,909 - comtypes._comobject - DEBUG - 1 active COM objects: Added   <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001F4C06223C0>
+2025-10-30 15:26:13,910 - comtypes._comobject - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001F4C06223C0>.AddRef() -> 1
+2025-10-30 15:26:13,929 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IConnectionPointContainer) ptr=0x1f4fee99e18 at 1f4c04a9e50>
+2025-10-30 15:26:14,347 - comtypes.client._managing - DEBUG - wrap_outparam(<POINTER(ISpeechObjectToken) ptr=0x1f4fc3aea70 at 1f4c04a9e50>)
+2025-10-30 15:26:14,350 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x1f4fc3aea70 at 1f4c04a9e50>
+2025-10-30 15:26:14,353 - comtypes.client._managing - DEBUG - wrap_outparam(<POINTER(ISpeechObjectTokens) ptr=0x1f4fef679f0 at 1f4c04a9e50>)
+2025-10-30 15:26:14,356 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IUnknown) ptr=0x1f4c1bb8270 at 1f4c04a9bd0>
+2025-10-30 15:26:14,357 - comtypes.client._managing - DEBUG - wrap_outparam(<POINTER(IDispatch) ptr=0x1f4fefeab50 at 1f4c04a9b50>)
+2025-10-30 15:26:14,359 - comtypes.client._managing - DEBUG - GetBestInterface(<POINTER(IDispatch) ptr=0x1f4fefeab50 at 1f4c04a9b50>)
+2025-10-30 15:26:14,363 - comtypes.client._managing - DEBUG - Does NOT implement IProvideClassInfo, trying IProvideClassInfo2
+2025-10-30 15:26:14,372 - comtypes.client._managing - DEBUG - Does NOT implement IProvideClassInfo/IProvideClassInfo2
+2025-10-30 15:26:14,378 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IUnknown) ptr=0x1f4bf55b120 at 1f4c0ca0550>
+2025-10-30 15:26:14,381 - comtypes.client._managing - DEBUG - Default interface is {C74A3ADC-B727-4500-A84A-B526721C8B8C}
+2025-10-30 15:26:14,382 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IUnknown) ptr=0x1f4fefeab50 at 1f4c0ca0850>
+2025-10-30 15:26:14,384 - comtypes.client._generate - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2025-10-30 15:26:14,385 - comtypes.client._managing - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechObjectToken'>
+2025-10-30 15:26:14,390 - comtypes.client._managing - DEBUG - Final result is <POINTER(ISpeechObjectToken) ptr=0x1f4fefeab50 at 1f4c0ca0750>
+2025-10-30 15:26:14,392 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IDispatch) ptr=0x1f4fefeab50 at 1f4c0ca06d0>
+2025-10-30 15:26:14,392 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ITypeInfo) ptr=0x1f4bf55b120 at 1f4c0ca0450>
+2025-10-30 15:26:14,394 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ITypeLib) ptr=0x1f4bba10990 at 1f4c0ca0850>
+2025-10-30 15:26:14,395 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IDispatch) ptr=0x1f4fefeab50 at 1f4c04a9b50>
+2025-10-30 15:26:14,396 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IEnumVARIANT) ptr=0x1f4c1bb8270 at 1f4c04a9950>
+2025-10-30 15:26:14,397 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ISpeechObjectTokens) ptr=0x1f4fef679f0 at 1f4c04a9e50>
+2025-10-30 15:26:14,398 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x1f4fefeab50 at 1f4c0ca0750>
+2025-10-30 15:26:53,433 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-10-30 15:26:53,433 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-10-30 15:26:53,436 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-10-30 15:26:54,912 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 307 0
+2025-10-30 15:26:54,926 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json HTTP/1.1" 200 0
+2025-10-30 15:26:55,217 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 307 0
+2025-10-30 15:26:55,230 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-10-30 15:26:55,526 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 307 0
+2025-10-30 15:26:55,540 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-10-30 15:26:55,832 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 307 0
+2025-10-30 15:26:55,844 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md HTTP/1.1" 200 0
+2025-10-30 15:26:56,138 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 307 0
+2025-10-30 15:26:56,150 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json HTTP/1.1" 200 0
+2025-10-30 15:26:56,457 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 307 0
+2025-10-30 15:26:56,473 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json HTTP/1.1" 200 0
+2025-10-30 15:26:56,753 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-10-30 15:26:57,067 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 307 0
+2025-10-30 15:26:57,091 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json HTTP/1.1" 200 0
+2025-10-30 15:26:57,383 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 307 0
+2025-10-30 15:26:57,398 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json HTTP/1.1" 200 0
+2025-10-30 15:26:57,778 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json HTTP/1.1" 307 0
+2025-10-30 15:26:57,790 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json HTTP/1.1" 200 0
+2025-10-30 15:26:58,091 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6876
+2025-10-30 15:27:03,205 - __main__ - INFO - Pinecone index status: 3652 vectors found.
+2025-10-30 15:27:15,716 - __main__ - INFO - 
+============================================================
+2025-10-30 15:27:15,734 - __main__ - INFO - User message: hey...
+2025-10-30 15:27:15,735 - __main__ - INFO - 
+--- RAG Context Retrieval ---
+2025-10-30 15:27:15,735 - __main__ - INFO - 
+============================================================
+2025-10-30 15:27:15,752 - __main__ - INFO - Query: hey...
+2025-10-30 15:27:15,752 - __main__ - INFO - Top K requested: 5
+2025-10-30 15:27:16,151 - __main__ - DEBUG - Query embedding shape: (384,)
+2025-10-30 15:27:16,480 - __main__ - DEBUG - 
+  Match #1:
+2025-10-30 15:27:16,481 - __main__ - DEBUG -     - Similarity: 0.0652
+2025-10-30 15:27:16,482 - __main__ - DEBUG -     - Source: customer_acquisition.txt
+2025-10-30 15:27:16,482 - __main__ - DEBUG -     - Domain: marketing
+2025-10-30 15:27:16,483 - __main__ - DEBUG -     - Text preview: Customer acquisition channels: SEO, content marketing, paid ads, partnerships, referrals. Test multi...
+2025-10-30 15:27:16,497 - __main__ - DEBUG - 
+  Match #2:
+2025-10-30 15:27:16,498 - __main__ - DEBUG -     - Similarity: 0.0441
+2025-10-30 15:27:16,499 - __main__ - DEBUG -     - Source: mvp_guide.txt
+2025-10-30 15:27:16,500 - __main__ - DEBUG -     - Domain: product_development
+2025-10-30 15:27:16,501 - __main__ - DEBUG -     - Text preview: MVP (Minimum Viable Product) should focus on core functionality that solves the main problem. Avoid ...
+2025-10-30 15:27:16,518 - __main__ - DEBUG - 
+  Match #3:
+2025-10-30 15:27:16,519 - __main__ - DEBUG -     - Similarity: 0.0426
+2025-10-30 15:27:16,520 - __main__ - DEBUG -     - Source: startup_fundamentals.txt
+2025-10-30 15:27:16,521 - __main__ - DEBUG -     - Domain: product_development
+2025-10-30 15:27:16,522 - __main__ - DEBUG -     - Text preview: Product-Market Fit is achieved when you have built something that a lot of people want. Signs includ...
+2025-10-30 15:27:16,537 - __main__ - DEBUG - 
+  Match #4:
+2025-10-30 15:27:16,538 - __main__ - DEBUG -     - Similarity: 0.0287
+2025-10-30 15:27:16,539 - __main__ - DEBUG -     - Source: team_guide.txt
+2025-10-30 15:27:16,540 - __main__ - DEBUG -     - Domain: team_building
+2025-10-30 15:27:16,541 - __main__ - DEBUG -     - Text preview: Team building priorities: Technical co-founder, sales/marketing lead, domain expert. Equity distribu...
+2025-10-30 15:27:16,556 - __main__ - DEBUG - 
+  Match #5:
+2025-10-30 15:27:16,557 - __main__ - DEBUG -     - Similarity: 0.0149
+2025-10-30 15:27:16,558 - __main__ - DEBUG -     - Source: scaling_guide.txt
+2025-10-30 15:27:16,558 - __main__ - DEBUG -     - Domain: scalability
+2025-10-30 15:27:16,559 - __main__ - DEBUG -     - Text preview: Scalability planning: Infrastructure that can handle 10x growth, automated processes, hiring plan, o...
+2025-10-30 15:27:16,586 - __main__ - INFO -   - Total matches found: 5
+2025-10-30 15:27:16,587 - __main__ - INFO -   - Matches included (>0.25): 0
+2025-10-30 15:27:16,587 - __main__ - INFO -   - Matches filtered out: 5
+2025-10-30 15:27:16,588 - __main__ - INFO - ============================================================
+
+2025-10-30 15:27:16,589 - __main__ - INFO - Retrieved 0 RAG contexts
+2025-10-30 15:27:16,591 - __main__ - INFO - 
+--- Web Search Check ---
+2025-10-30 15:27:16,592 - __main__ - INFO - Needs web search: False
+2025-10-30 15:27:16,593 - __main__ - INFO - 
+--- Context Summary ---
+2025-10-30 15:27:16,594 - __main__ - INFO - RAG contexts: 0
+2025-10-30 15:27:16,595 - __main__ - INFO - Web contexts: 0
+2025-10-30 15:27:16,596 - __main__ - INFO - Conversation memory: 0 turns
+2025-10-30 15:27:16,597 - __main__ - INFO - Total context length: 0 chars
+2025-10-30 15:27:16,597 - __main__ - INFO - 
+--- Gemini API Call ---
+2025-10-30 15:27:16,598 - __main__ - INFO - Sending chat request to Gemini...
+2025-10-30 15:27:23,702 - __main__ - INFO - Total API calls: 1
+2025-10-30 15:27:23,703 - __main__ - INFO - ============================================================
+
+2025-10-30 15:27:23,722 - comtypes.client._managing - DEBUG - wrap_outparam(<POINTER(ISpeechObjectToken) ptr=0x1f4fc3aea70 at 1f4c3df0950>)
+2025-10-30 15:27:24,068 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x1f4fc3aea70 at 1f4c3df0950>
+2025-10-30 15:27:24,069 - comtypes.client._managing - DEBUG - wrap_outparam(<POINTER(ISpeechObjectToken) ptr=0x1f4fc3aea70 at 1f4c03fcad0>)
+2025-10-30 15:27:24,070 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x1f4fc3aea70 at 1f4c03fcad0>
+2025-10-30 19:00:22,237 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-10-30 19:00:22,251 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-10-30 19:00:33,249 - __main__ - INFO - Pinecone index status: 3652 vectors found.
