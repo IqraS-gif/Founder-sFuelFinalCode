@@ -511,21 +511,21 @@ const cardData = [
     title: 'Success Prediction',
     description: 'Predict your startup’s success probability using AI models trained on real-world startup data.',
     color: '252, 252, 142',
-    link: '/evaluate', // CHANGED
+    link: '/predictor', // CHANGED
   },
   {
     id: 4,
     title: 'Startup Analysis Chatbot',
     description: 'Data-driven startup evaluations with an AI-powered RAG chatbot.',
     color: '252, 142, 142',
-    link: '/evaluate', // CHANGED
+    link: 'http://localhost:8501/', // CHANGED
   },
   {
     id: 5,
     title: '7 domain analysis',
     description: 'Analyzes 7 core domains + live web searching for startup evaluation.',
     color: '204, 142, 252',
-    link: '/evaluate', // CHANGED
+    link: 'http://localhost:8501/', // CHANGED
   },
 ];
 

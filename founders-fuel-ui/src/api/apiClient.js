@@ -366,3 +366,23 @@ export const evaluateStartup = (evaluationData) => {
     // the Pydantic model (EvaluationRequest) in the FastAPI backend.
     return apiClient.post('/evaluate', evaluationData);
 };
+
+/**
+ * Predicts the success probability of a crowdfunding campaign.
+ * @param {object} payload - The form data (goal, backers, usd_pledged, text).
+ * @returns {Promise<object>} An object with the success_probability percentage.
+ */
+export const predictSuccess = (payload) => {
+    // Note: This matches the /predict endpoint added to endpoints.py
+    return apiClient.post('/predict', payload);
+}
+
+/**
+ * Generates a narrative explanation for the prediction.
+ * @param {object} payload - The form data (goal, backers, usd_pledged, text).
+ * @returns {Promise<object>} An object with the narrative summary.
+ */
+export const explainSuccess = (payload) => {
+    // Note: This matches the /explain endpoint added to endpoints.py
+    return apiClient.post('/explain', payload);
+};

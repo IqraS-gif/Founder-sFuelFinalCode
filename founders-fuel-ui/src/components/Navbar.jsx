@@ -152,7 +152,7 @@ const Navbar = () => {
       </LogoContainer>
 
       <NavLinks>
-        <StyledLink href="#">Home</StyledLink>
+        <StyledLink href="http://localhost:5173/">Home</StyledLink>
         <StyledLink href="#">About</StyledLink>
         <StyledLink href="#">Features</StyledLink>
         <CtaButton>Get Started</CtaButton>

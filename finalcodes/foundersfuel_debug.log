@@ -1,0 +1,355 @@
+2025-10-22 19:26:45,824 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-10-22 19:26:45,824 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-10-22 19:26:45,828 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-10-22 19:26:47,407 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 307 0
+2025-10-22 19:26:47,447 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json HTTP/1.1" 200 0
+2025-10-22 19:26:47,710 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 307 0
+2025-10-22 19:26:47,748 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-10-22 19:26:48,006 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 307 0
+2025-10-22 19:26:48,042 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-10-22 19:26:48,299 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 307 0
+2025-10-22 19:26:48,357 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md HTTP/1.1" 200 0
+2025-10-22 19:26:48,628 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 307 0
+2025-10-22 19:26:48,668 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json HTTP/1.1" 200 0
+2025-10-22 19:26:48,936 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 307 0
+2025-10-22 19:26:48,973 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json HTTP/1.1" 200 0
+2025-10-22 19:26:49,229 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-10-22 19:26:49,480 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 307 0
+2025-10-22 19:26:49,516 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json HTTP/1.1" 200 0
+2025-10-22 19:26:50,491 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 307 0
+2025-10-22 19:26:50,528 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json HTTP/1.1" 200 0
+2025-10-22 19:26:50,913 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json HTTP/1.1" 307 0
+2025-10-22 19:26:50,954 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json HTTP/1.1" 200 0
+2025-10-22 19:26:51,290 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6876
+2025-10-22 19:26:54,060 - comtypes - DEBUG - CoInitializeEx(None, 2)
+2025-10-22 19:26:54,162 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\iqras\\AppData\\Roaming\\Python\\Python313\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-10-22 19:26:54,164 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\iqras\AppData\Roaming\Python\Python313\site-packages\comtypes\gen'
+2025-10-22 19:26:54,367 - comtypes.client._create - DEBUG - SAPI.SPVoice -> {96749377-3391-11D2-9EE3-00C04F797396}
+2025-10-22 19:26:54,367 - comtypes.client._create - DEBUG - CoCreateInstance({96749377-3391-11D2-9EE3-00C04F797396}, clsctx=None, interface=None)
+2025-10-22 19:26:54,416 - comtypes.client._managing - DEBUG - GetBestInterface(<POINTER(IUnknown) ptr=0x1a3e9846430 at 1a3ab023f50>)
+2025-10-22 19:26:54,418 - comtypes.client._managing - DEBUG - Does implement IProvideClassInfo
+2025-10-22 19:26:54,425 - comtypes.client._managing - DEBUG - Default interface is {269316D8-57BD-11D2-9EEE-00C04F797396}
+2025-10-22 19:26:54,426 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IUnknown) ptr=0x1a3e9846470 at 1a3ab7bec50>
+2025-10-22 19:26:54,428 - comtypes.client._generate - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2025-10-22 19:26:54,431 - comtypes.client._managing - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechVoice'>
+2025-10-22 19:26:54,433 - comtypes.client._managing - DEBUG - Final result is <POINTER(ISpeechVoice) ptr=0x1a3e9846470 at 1a3ab7bebd0>
+2025-10-22 19:26:54,434 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IProvideClassInfo) ptr=0x1a3e9846490 at 1a3ab7be850>
+2025-10-22 19:26:54,435 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ITypeInfo) ptr=0x1a3aa5cc028 at 1a3ab7be8d0>
+2025-10-22 19:26:54,437 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ITypeInfo) ptr=0x1a3aa5cc080 at 1a3ab7be650>
+2025-10-22 19:26:54,439 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ITypeLib) ptr=0x1a3aa2cd330 at 1a3ab7bec50>
+2025-10-22 19:26:54,440 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IUnknown) ptr=0x1a3e9846430 at 1a3ab023f50>
+2025-10-22 19:26:54,443 - comtypes.client._events - DEBUG - <POINTER(ISpeechVoice) ptr=0x1a3e9846470 at 1a3ab7bebd0> using sinkinterface from clsid <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4._ISpeechVoiceEvents'>
+2025-10-22 19:26:54,444 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IProvideClassInfo2) ptr=0x1a3e9846490 at 1a3ab023f50>
+2025-10-22 19:26:54,448 - comtypes._vtbl - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001A3AAE9E270>: _ISpeechVoiceEvents.VoiceChange not implemented
+2025-10-22 19:26:54,449 - comtypes._vtbl - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001A3AAE9E270>: _ISpeechVoiceEvents.Bookmark not implemented
+2025-10-22 19:26:54,451 - comtypes._vtbl - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001A3AAE9E270>: _ISpeechVoiceEvents.Sentence not implemented
+2025-10-22 19:26:54,452 - comtypes._vtbl - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001A3AAE9E270>: _ISpeechVoiceEvents.Phoneme not implemented
+2025-10-22 19:26:54,453 - comtypes._vtbl - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001A3AAE9E270>: _ISpeechVoiceEvents.Viseme not implemented
+2025-10-22 19:26:54,455 - comtypes._vtbl - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001A3AAE9E270>: _ISpeechVoiceEvents.AudioLevel not implemented
+2025-10-22 19:26:54,456 - comtypes._vtbl - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001A3AAE9E270>: _ISpeechVoiceEvents.EnginePrivate not implemented
+2025-10-22 19:26:54,458 - comtypes.client._events - DEBUG - Start advise <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4._ISpeechVoiceEvents'>
+2025-10-22 19:26:54,459 - comtypes._comobject - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001A3AAE9E270>.QueryInterface({A372ACD1-3BEF-4BBD-8FFB-CB3E2B416AF8}) -> S_OK
+2025-10-22 19:26:54,460 - comtypes._comobject - DEBUG - 1 active COM objects: Added   <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001A3AAE9E270>
+2025-10-22 19:26:54,461 - comtypes._comobject - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x000001A3AAE9E270>.AddRef() -> 1
+2025-10-22 19:26:54,476 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IConnectionPointContainer) ptr=0x1a3e9846498 at 1a3ab4f57d0>
+2025-10-22 19:26:54,741 - comtypes.client._managing - DEBUG - wrap_outparam(<POINTER(ISpeechObjectToken) ptr=0x1a3e6d9c4f0 at 1a3ab4f57d0>)
+2025-10-22 19:26:54,744 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x1a3e6d9c4f0 at 1a3ab4f57d0>
+2025-10-22 19:26:54,745 - comtypes.client._managing - DEBUG - wrap_outparam(<POINTER(ISpeechObjectTokens) ptr=0x1a3e98f14a0 at 1a3ab4f57d0>)
+2025-10-22 19:26:54,747 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IUnknown) ptr=0x1a3ad601f70 at 1a3ab4f5550>
+2025-10-22 19:26:54,747 - comtypes.client._managing - DEBUG - wrap_outparam(<POINTER(IDispatch) ptr=0x1a3ad5f9400 at 1a3ab4f54d0>)
+2025-10-22 19:26:54,748 - comtypes.client._managing - DEBUG - GetBestInterface(<POINTER(IDispatch) ptr=0x1a3ad5f9400 at 1a3ab4f54d0>)
+2025-10-22 19:26:54,749 - comtypes.client._managing - DEBUG - Does NOT implement IProvideClassInfo, trying IProvideClassInfo2
+2025-10-22 19:26:54,751 - comtypes.client._managing - DEBUG - Does NOT implement IProvideClassInfo/IProvideClassInfo2
+2025-10-22 19:26:54,754 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IUnknown) ptr=0x1a3aa5cc130 at 1a3ab7bfd50>
+2025-10-22 19:26:54,755 - comtypes.client._managing - DEBUG - Default interface is {C74A3ADC-B727-4500-A84A-B526721C8B8C}
+2025-10-22 19:26:54,755 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IUnknown) ptr=0x1a3ad5f9400 at 1a3ab8481d0>
+2025-10-22 19:26:54,756 - comtypes.client._generate - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2025-10-22 19:26:54,757 - comtypes.client._managing - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechObjectToken'>
+2025-10-22 19:26:54,758 - comtypes.client._managing - DEBUG - Final result is <POINTER(ISpeechObjectToken) ptr=0x1a3ad5f9400 at 1a3ab8480d0>
+2025-10-22 19:26:54,760 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IDispatch) ptr=0x1a3ad5f9400 at 1a3ab7bfe50>
+2025-10-22 19:26:54,761 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ITypeInfo) ptr=0x1a3aa5cc130 at 1a3ab7bff50>
+2025-10-22 19:26:54,762 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ITypeLib) ptr=0x1a3aa2cd330 at 1a3ab7bfd50>
+2025-10-22 19:26:54,763 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IDispatch) ptr=0x1a3ad5f9400 at 1a3ab4f54d0>
+2025-10-22 19:26:54,764 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IEnumVARIANT) ptr=0x1a3ad601f70 at 1a3ab4f52d0>
+2025-10-22 19:26:54,765 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ISpeechObjectTokens) ptr=0x1a3e98f14a0 at 1a3ab4f57d0>
+2025-10-22 19:26:54,766 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x1a3ad5f9400 at 1a3ab8480d0>
+2025-10-22 19:26:56,728 - __main__ - INFO - Pinecone index status: 3652 vectors found.
+2025-10-22 19:29:58,836 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-10-22 19:29:58,837 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-10-22 19:30:08,616 - __main__ - INFO - Pinecone index status: 3652 vectors found.
+2025-10-22 19:35:12,033 - git.cmd - DEBUG - Popen(['git', 'version'], cwd=C:\Users\iqras\OneDrive\Desktop\FoundersFuelFrontend, stdin=None, shell=False, universal_newlines=False)
+2025-10-22 19:35:12,188 - git.cmd - DEBUG - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=C:\Users\iqras\OneDrive\Desktop\FoundersFuelFrontend, stdin=None, shell=False, universal_newlines=False)
+2025-10-22 19:35:12,317 - git.cmd - DEBUG - Popen(['git', 'remote', 'get-url', '--all', 'origin'], cwd=C:\Users\iqras\OneDrive\Desktop\FoundersFuelFrontend, stdin=None, shell=False, universal_newlines=False)
+2025-10-22 19:35:12,443 - git.cmd - DEBUG - Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=C:\Users\iqras\OneDrive\Desktop\FoundersFuelFrontend, stdin=None, shell=False, universal_newlines=False)
+2025-10-22 19:35:12,588 - git.cmd - DEBUG - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=C:\Users\iqras\OneDrive\Desktop\FoundersFuelFrontend, stdin=None, shell=False, universal_newlines=False)
+2025-10-22 19:35:12,707 - git.cmd - DEBUG - Popen(['git', 'cat-file', '--batch-check'], cwd=C:\Users\iqras\OneDrive\Desktop\FoundersFuelFrontend, stdin=<valid stream>, shell=False, universal_newlines=False)
+2025-10-22 19:35:12,792 - git.cmd - DEBUG - Popen(['git', 'rev-list', 'origin/main..main', '--'], cwd=C:\Users\iqras\OneDrive\Desktop\FoundersFuelFrontend, stdin=None, shell=False, universal_newlines=False)
+2025-10-30 12:41:03,781 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-10-30 12:41:03,783 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-10-30 12:41:03,791 - urllib3.connectionpool - DEBUG - Starting new HTTPS connection (1): huggingface.co:443
+2025-10-30 12:41:04,897 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 307 0
+2025-10-30 12:41:04,913 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json HTTP/1.1" 200 0
+2025-10-30 12:41:05,129 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 307 0
+2025-10-30 12:41:05,144 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-10-30 12:41:05,356 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config_sentence_transformers.json HTTP/1.1" 307 0
+2025-10-30 12:41:05,368 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config_sentence_transformers.json HTTP/1.1" 200 0
+2025-10-30 12:41:05,582 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/README.md HTTP/1.1" 307 0
+2025-10-30 12:41:05,596 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/README.md HTTP/1.1" 200 0
+2025-10-30 12:41:05,810 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/modules.json HTTP/1.1" 307 0
+2025-10-30 12:41:05,821 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/modules.json HTTP/1.1" 200 0
+2025-10-30 12:41:06,035 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/sentence_bert_config.json HTTP/1.1" 307 0
+2025-10-30 12:41:06,048 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/sentence_bert_config.json HTTP/1.1" 200 0
+2025-10-30 12:41:06,261 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/adapter_config.json HTTP/1.1" 404 0
+2025-10-30 12:41:06,473 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/config.json HTTP/1.1" 307 0
+2025-10-30 12:41:06,483 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/config.json HTTP/1.1" 200 0
+2025-10-30 12:41:07,438 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/tokenizer_config.json HTTP/1.1" 307 0
+2025-10-30 12:41:07,455 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/tokenizer_config.json HTTP/1.1" 200 0
+2025-10-30 12:41:07,781 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /sentence-transformers/all-MiniLM-L6-v2/resolve/main/1_Pooling/config.json HTTP/1.1" 307 0
+2025-10-30 12:41:07,797 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "HEAD /api/resolve-cache/models/sentence-transformers/all-MiniLM-L6-v2/c9745ed1d9f207416be6d2e6f8de32d1f16199bf/1_Pooling%2Fconfig.json HTTP/1.1" 200 0
+2025-10-30 12:41:08,030 - urllib3.connectionpool - DEBUG - https://huggingface.co:443 "GET /api/models/sentence-transformers/all-MiniLM-L6-v2 HTTP/1.1" 200 6876
+2025-10-30 12:41:11,103 - comtypes - DEBUG - CoInitializeEx(None, 2)
+2025-10-30 12:41:11,285 - comtypes.client._code_cache - INFO - Imported existing <module 'comtypes.gen' from 'C:\\Users\\iqras\\AppData\\Roaming\\Python\\Python313\\site-packages\\comtypes\\gen\\__init__.py'>
+2025-10-30 12:41:11,287 - comtypes.client._code_cache - INFO - Using writeable comtypes cache directory: 'C:\Users\iqras\AppData\Roaming\Python\Python313\site-packages\comtypes\gen'
+2025-10-30 12:41:11,536 - comtypes.client._create - DEBUG - SAPI.SPVoice -> {96749377-3391-11D2-9EE3-00C04F797396}
+2025-10-30 12:41:11,537 - comtypes.client._create - DEBUG - CoCreateInstance({96749377-3391-11D2-9EE3-00C04F797396}, clsctx=None, interface=None)
+2025-10-30 12:41:11,592 - comtypes.client._managing - DEBUG - GetBestInterface(<POINTER(IUnknown) ptr=0x18d2a039db0 at 18d6b6880d0>)
+2025-10-30 12:41:11,594 - comtypes.client._managing - DEBUG - Does implement IProvideClassInfo
+2025-10-30 12:41:11,603 - comtypes.client._managing - DEBUG - Default interface is {269316D8-57BD-11D2-9EEE-00C04F797396}
+2025-10-30 12:41:11,605 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IUnknown) ptr=0x18d2a039df0 at 18d6be06c50>
+2025-10-30 12:41:11,607 - comtypes.client._generate - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2025-10-30 12:41:11,609 - comtypes.client._managing - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechVoice'>
+2025-10-30 12:41:11,610 - comtypes.client._managing - DEBUG - Final result is <POINTER(ISpeechVoice) ptr=0x18d2a039df0 at 18d6be06bd0>
+2025-10-30 12:41:11,612 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IProvideClassInfo) ptr=0x18d2a039e10 at 18d6be06850>
+2025-10-30 12:41:11,613 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ITypeInfo) ptr=0x18d6ab668e8 at 18d6be068d0>
+2025-10-30 12:41:11,614 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ITypeInfo) ptr=0x18d6ab66940 at 18d6be06650>
+2025-10-30 12:41:11,615 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ITypeLib) ptr=0x18d66cd2510 at 18d6be06c50>
+2025-10-30 12:41:11,616 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IUnknown) ptr=0x18d2a039db0 at 18d6b6880d0>
+2025-10-30 12:41:11,618 - comtypes.client._events - DEBUG - <POINTER(ISpeechVoice) ptr=0x18d2a039df0 at 18d6be06bd0> using sinkinterface from clsid <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4._ISpeechVoiceEvents'>
+2025-10-30 12:41:11,619 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IProvideClassInfo2) ptr=0x18d2a039e10 at 18d6b6880d0>
+2025-10-30 12:41:11,622 - comtypes._vtbl - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000018D6B532270>: _ISpeechVoiceEvents.VoiceChange not implemented
+2025-10-30 12:41:11,623 - comtypes._vtbl - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000018D6B532270>: _ISpeechVoiceEvents.Bookmark not implemented
+2025-10-30 12:41:11,624 - comtypes._vtbl - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000018D6B532270>: _ISpeechVoiceEvents.Sentence not implemented
+2025-10-30 12:41:11,626 - comtypes._vtbl - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000018D6B532270>: _ISpeechVoiceEvents.Phoneme not implemented
+2025-10-30 12:41:11,627 - comtypes._vtbl - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000018D6B532270>: _ISpeechVoiceEvents.Viseme not implemented
+2025-10-30 12:41:11,628 - comtypes._vtbl - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000018D6B532270>: _ISpeechVoiceEvents.AudioLevel not implemented
+2025-10-30 12:41:11,629 - comtypes._vtbl - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000018D6B532270>: _ISpeechVoiceEvents.EnginePrivate not implemented
+2025-10-30 12:41:11,630 - comtypes.client._events - DEBUG - Start advise <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4._ISpeechVoiceEvents'>
+2025-10-30 12:41:11,632 - comtypes._comobject - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000018D6B532270>.QueryInterface({A372ACD1-3BEF-4BBD-8FFB-CB3E2B416AF8}) -> S_OK
+2025-10-30 12:41:11,633 - comtypes._comobject - DEBUG - 1 active COM objects: Added   <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000018D6B532270>
+2025-10-30 12:41:11,634 - comtypes._comobject - DEBUG - <comtypes.client._events.CreateEventReceiver.<locals>.Sink object at 0x0000018D6B532270>.AddRef() -> 1
+2025-10-30 12:41:11,642 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IConnectionPointContainer) ptr=0x18d2a039e18 at 18d6bb3d7d0>
+2025-10-30 12:41:11,861 - comtypes.client._managing - DEBUG - wrap_outparam(<POINTER(ISpeechObjectToken) ptr=0x18d275ef120 at 18d6bb3d7d0>)
+2025-10-30 12:41:11,863 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x18d275ef120 at 18d6bb3d7d0>
+2025-10-30 12:41:11,864 - comtypes.client._managing - DEBUG - wrap_outparam(<POINTER(ISpeechObjectTokens) ptr=0x18d2a112580 at 18d6bb3d7d0>)
+2025-10-30 12:41:11,864 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IUnknown) ptr=0x18d6de33650 at 18d6bb3d550>
+2025-10-30 12:41:11,865 - comtypes.client._managing - DEBUG - wrap_outparam(<POINTER(IDispatch) ptr=0x18d6de2adc0 at 18d6bb3d4d0>)
+2025-10-30 12:41:11,865 - comtypes.client._managing - DEBUG - GetBestInterface(<POINTER(IDispatch) ptr=0x18d6de2adc0 at 18d6bb3d4d0>)
+2025-10-30 12:41:11,866 - comtypes.client._managing - DEBUG - Does NOT implement IProvideClassInfo, trying IProvideClassInfo2
+2025-10-30 12:41:11,866 - comtypes.client._managing - DEBUG - Does NOT implement IProvideClassInfo/IProvideClassInfo2
+2025-10-30 12:41:11,867 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IUnknown) ptr=0x18d6ab669f0 at 18d6be07d50>
+2025-10-30 12:41:11,867 - comtypes.client._managing - DEBUG - Default interface is {C74A3ADC-B727-4500-A84A-B526721C8B8C}
+2025-10-30 12:41:11,868 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IUnknown) ptr=0x18d6de2adc0 at 18d6bb4c1d0>
+2025-10-30 12:41:11,868 - comtypes.client._generate - DEBUG - GetModule(TLIBATTR(GUID={C866CA3A-32F7-11D2-9602-00C04F8EE628}, Version=5.4, LCID=0, FLags=0x8))
+2025-10-30 12:41:11,869 - comtypes.client._managing - DEBUG - Implements default interface from typeinfo <class 'comtypes.gen._C866CA3A_32F7_11D2_9602_00C04F8EE628_0_5_4.ISpeechObjectToken'>
+2025-10-30 12:41:11,869 - comtypes.client._managing - DEBUG - Final result is <POINTER(ISpeechObjectToken) ptr=0x18d6de2adc0 at 18d6bb4c0d0>
+2025-10-30 12:41:11,869 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IDispatch) ptr=0x18d6de2adc0 at 18d6be07e50>
+2025-10-30 12:41:11,869 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ITypeInfo) ptr=0x18d6ab669f0 at 18d6be07f50>
+2025-10-30 12:41:11,870 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ITypeLib) ptr=0x18d66cd2510 at 18d6be07d50>
+2025-10-30 12:41:11,870 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IDispatch) ptr=0x18d6de2adc0 at 18d6bb3d4d0>
+2025-10-30 12:41:11,870 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(IEnumVARIANT) ptr=0x18d6de33650 at 18d6bb3d2d0>
+2025-10-30 12:41:11,871 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ISpeechObjectTokens) ptr=0x18d2a112580 at 18d6bb3d7d0>
+2025-10-30 12:41:11,871 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x18d6de2adc0 at 18d6bb4c0d0>
+2025-10-30 12:41:14,071 - __main__ - INFO - Pinecone index status: 3652 vectors found.
+2025-10-30 13:19:24,736 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-10-30 13:19:24,742 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-10-30 13:19:34,011 - __main__ - INFO - Pinecone index status: 3652 vectors found.
+2025-10-30 14:26:15,847 - sentence_transformers.SentenceTransformer - INFO - Use pytorch device_name: cpu
+2025-10-30 14:26:15,854 - sentence_transformers.SentenceTransformer - INFO - Load pretrained SentenceTransformer: all-MiniLM-L6-v2
+2025-10-30 14:26:24,370 - __main__ - INFO - Pinecone index status: 3652 vectors found.
+2025-10-30 14:26:24,407 - __main__ - INFO - 
+################################################################################
+2025-10-30 14:26:24,448 - __main__ - INFO - ################################################################################
+2025-10-30 14:26:24,449 - __main__ - INFO - Startup Name: purple 
+2025-10-30 14:26:24,449 - __main__ - INFO - Idea Length: 321 chars
+2025-10-30 14:26:24,450 - __main__ - INFO - Uploaded Content: 0 chars
+2025-10-30 14:26:24,452 - __main__ - INFO - 
+--- PHASE 1: RAG CONTEXT RETRIEVAL ---
+2025-10-30 14:26:24,453 - __main__ - INFO - 
+============================================================
+2025-10-30 14:26:24,463 - __main__ - INFO - Query: "Purple go company" could refer to either Purple Go, an optical store management software company, o...
+2025-10-30 14:26:24,464 - __main__ - INFO - Top K requested: 8
+2025-10-30 14:26:24,839 - __main__ - DEBUG - Query embedding shape: (384,)
+2025-10-30 14:26:25,203 - __main__ - DEBUG - 
+  Match #1:
+2025-10-30 14:26:25,204 - __main__ - DEBUG -     - Similarity: 0.3450
+2025-10-30 14:26:25,207 - __main__ - DEBUG -     - Source: gtm_strategy.txt
+2025-10-30 14:26:25,209 - __main__ - DEBUG -     - Domain: go_to_market
+2025-10-30 14:26:25,210 - __main__ - DEBUG -     - Text preview: Go-to-market strategy components: Target customer definition, value proposition, pricing strategy, s...
+2025-10-30 14:26:25,220 - __main__ - DEBUG - 
+  Match #2:
+2025-10-30 14:26:25,220 - __main__ - DEBUG -     - Similarity: 0.2519
+2025-10-30 14:26:25,220 - __main__ - DEBUG -     - Source: competition_analysis.txt
+2025-10-30 14:26:25,221 - __main__ - DEBUG -     - Domain: competitive_analysis
+2025-10-30 14:26:25,222 - __main__ - DEBUG -     - Text preview: Competitive analysis framework: Direct competitors, indirect competitors, substitute products. Analy...
+2025-10-30 14:26:25,232 - __main__ - DEBUG - 
+  Match #3:
+2025-10-30 14:26:25,233 - __main__ - DEBUG -     - Similarity: 0.1922
+2025-10-30 14:26:25,234 - __main__ - DEBUG -     - Source: startup_fundamentals.txt
+2025-10-30 14:26:25,234 - __main__ - DEBUG -     - Domain: product_development
+2025-10-30 14:26:25,235 - __main__ - DEBUG -     - Text preview: Product-Market Fit is achieved when you have built something that a lot of people want. Signs includ...
+2025-10-30 14:26:25,243 - __main__ - DEBUG - 
+  Match #4:
+2025-10-30 14:26:25,243 - __main__ - DEBUG -     - Similarity: 0.1595
+2025-10-30 14:26:25,244 - __main__ - DEBUG -     - Source: startup_legal.txt
+2025-10-30 14:26:25,244 - __main__ - DEBUG -     - Domain: legal
+2025-10-30 14:26:25,245 - __main__ - DEBUG -     - Text preview: Legal considerations for startups: Business structure (LLC, C-Corp), intellectual property protectio...
+2025-10-30 14:26:25,254 - __main__ - DEBUG - 
+  Match #5:
+2025-10-30 14:26:25,255 - __main__ - DEBUG -     - Similarity: 0.1507
+2025-10-30 14:26:25,256 - __main__ - DEBUG -     - Source: team_guide.txt
+2025-10-30 14:26:25,256 - __main__ - DEBUG -     - Domain: team_building
+2025-10-30 14:26:25,257 - __main__ - DEBUG -     - Text preview: Team building priorities: Technical co-founder, sales/marketing lead, domain expert. Equity distribu...
+2025-10-30 14:26:25,269 - __main__ - DEBUG - 
+  Match #6:
+2025-10-30 14:26:25,271 - __main__ - DEBUG -     - Similarity: 0.1456
+2025-10-30 14:26:25,271 - __main__ - DEBUG -     - Source: saas_fundamentals.txt
+2025-10-30 14:26:25,272 - __main__ - DEBUG -     - Domain: saas_metrics
+2025-10-30 14:26:25,272 - __main__ - DEBUG -     - Text preview: SaaS metrics to track: Monthly Recurring Revenue (MRR), Annual Recurring Revenue (ARR), Churn rate, ...
+2025-10-30 14:26:25,280 - __main__ - DEBUG - 
+  Match #7:
+2025-10-30 14:26:25,281 - __main__ - DEBUG -     - Similarity: 0.1059
+2025-10-30 14:26:25,281 - __main__ - DEBUG -     - Source: customer_acquisition.txt
+2025-10-30 14:26:25,282 - __main__ - DEBUG -     - Domain: marketing
+2025-10-30 14:26:25,282 - __main__ - DEBUG -     - Text preview: Customer acquisition channels: SEO, content marketing, paid ads, partnerships, referrals. Test multi...
+2025-10-30 14:26:25,290 - __main__ - DEBUG - 
+  Match #8:
+2025-10-30 14:26:25,291 - __main__ - DEBUG -     - Similarity: 0.0883
+2025-10-30 14:26:25,291 - __main__ - DEBUG -     - Source: market_sizing.txt
+2025-10-30 14:26:25,292 - __main__ - DEBUG -     - Domain: market_analysis
+2025-10-30 14:26:25,293 - __main__ - DEBUG -     - Text preview: Market size calculation: TAM (Total Addressable Market), SAM (Serviceable Addressable Market), SOM (...
+2025-10-30 14:26:25,311 - __main__ - INFO -   - Total matches found: 8
+2025-10-30 14:26:25,312 - __main__ - INFO -   - Matches included (>0.25): 2
+2025-10-30 14:26:25,313 - __main__ - INFO -   - Matches filtered out: 6
+2025-10-30 14:26:25,313 - __main__ - INFO - ============================================================
+
+2025-10-30 14:26:25,323 - __main__ - INFO - 
+--- PHASE 2: WEB SEARCH & SCRAPING ---
+2025-10-30 14:26:25,334 - __main__ - INFO - 
+============================================================
+2025-10-30 14:26:25,343 - __main__ - INFO - Query: "Purple go company" could refer to either Purple Go, an optical store management software company, or Purplle.com, an Indian online beauty retailer. Purple Go is based in the United States and provides an iPad-based platform for optical shops, while Purplle.com is an e-commerce company selling beauty products in India.  startup competitors market analysis
+2025-10-30 14:26:25,344 - __main__ - INFO - Max results: 2
+2025-10-30 14:26:28,747 - __main__ - INFO -   - Total results: 0
+2025-10-30 14:26:28,747 - __main__ - INFO -   - Successfully scraped: 0
+2025-10-30 14:26:28,748 - __main__ - INFO -   - Results without scraping: 0
+2025-10-30 14:26:28,748 - __main__ - INFO - ============================================================
+
+2025-10-30 14:26:28,749 - __main__ - INFO -   Retrieved 0 results
+2025-10-30 14:26:28,758 - __main__ - INFO - 
+============================================================
+2025-10-30 14:26:28,766 - __main__ - INFO - Query: "Purple go company" could refer to either Purple Go, an optical store management software company, or Purplle.com, an Indian online beauty retailer. Purple Go is based in the United States and provides an iPad-based platform for optical shops, while Purplle.com is an e-commerce company selling beauty products in India.  technology stack architecture
+2025-10-30 14:26:28,767 - __main__ - INFO - Max results: 2
+2025-10-30 14:26:31,559 - __main__ - INFO -   - Total results: 0
+2025-10-30 14:26:31,559 - __main__ - INFO -   - Successfully scraped: 0
+2025-10-30 14:26:31,559 - __main__ - INFO -   - Results without scraping: 0
+2025-10-30 14:26:31,560 - __main__ - INFO - ============================================================
+
+2025-10-30 14:26:31,560 - __main__ - INFO -   Retrieved 0 results
+2025-10-30 14:26:31,566 - __main__ - INFO - 
+============================================================
+2025-10-30 14:26:31,571 - __main__ - INFO - Query: "Purple go company" could refer to either Purple Go, an optical store management software company, or Purplle.com, an Indian online beauty retailer. Purple Go is based in the United States and provides an iPad-based platform for optical shops, while Purplle.com is an e-commerce company selling beauty products in India.  funding investment trends 2024
+2025-10-30 14:26:31,572 - __main__ - INFO - Max results: 2
+2025-10-30 14:26:33,768 - __main__ - INFO -   - Total results: 0
+2025-10-30 14:26:33,769 - __main__ - INFO -   - Successfully scraped: 0
+2025-10-30 14:26:33,770 - __main__ - INFO -   - Results without scraping: 0
+2025-10-30 14:26:33,771 - __main__ - INFO - ============================================================
+
+2025-10-30 14:26:33,772 - __main__ - INFO -   Retrieved 0 results
+2025-10-30 14:26:33,791 - __main__ - INFO - 
+--- PHASE 3: CONTEXT BUILDING ---
+2025-10-30 14:26:33,804 - __main__ - DEBUG -   - go_to_market | gtm_strategy.txt | 0.3450
+2025-10-30 14:26:33,805 - __main__ - DEBUG -   - competitive_analysis | competition_analysis.txt | 0.2519
+2025-10-30 14:26:33,814 - __main__ - INFO - 
+--- PHASE 4: GEMINI API CALL ---
+2025-10-30 14:26:59,076 - __main__ - INFO - 
+--- PHASE 5: RESPONSE PARSING ---
+2025-10-30 14:26:59,133 - __main__ - INFO - 
+################################################################################
+2025-10-30 14:26:59,141 - __main__ - INFO - ################################################################################
+
+2025-10-30 14:27:20,112 - __main__ - INFO - 
+============================================================
+2025-10-30 14:27:20,121 - __main__ - INFO - User message: what is the best startup in 2025 ...
+2025-10-30 14:27:20,122 - __main__ - INFO - 
+--- RAG Context Retrieval ---
+2025-10-30 14:27:20,122 - __main__ - INFO - 
+============================================================
+2025-10-30 14:27:20,132 - __main__ - INFO - Query: what is the best startup in 2025 ...
+2025-10-30 14:27:20,132 - __main__ - INFO - Top K requested: 5
+2025-10-30 14:27:20,176 - __main__ - DEBUG - Query embedding shape: (384,)
+2025-10-30 14:27:20,496 - __main__ - DEBUG - 
+  Match #1:
+2025-10-30 14:27:20,498 - __main__ - DEBUG -     - Similarity: 0.4156
+2025-10-30 14:27:20,499 - __main__ - DEBUG -     - Source: startup_legal.txt
+2025-10-30 14:27:20,500 - __main__ - DEBUG -     - Domain: legal
+2025-10-30 14:27:20,500 - __main__ - DEBUG -     - Text preview: Legal considerations for startups: Business structure (LLC, C-Corp), intellectual property protectio...
+2025-10-30 14:27:20,513 - __main__ - DEBUG - 
+  Match #2:
+2025-10-30 14:27:20,514 - __main__ - DEBUG -     - Similarity: 0.3878
+2025-10-30 14:27:20,515 - __main__ - DEBUG -     - Source: tech_stack_guide.txt
+2025-10-30 14:27:20,516 - __main__ - DEBUG -     - Domain: technology
+2025-10-30 14:27:20,517 - __main__ - DEBUG -     - Text preview: Tech stack selection should consider scalability, team expertise, development speed, and maintenance...
+2025-10-30 14:27:20,529 - __main__ - DEBUG - 
+  Match #3:
+2025-10-30 14:27:20,530 - __main__ - DEBUG -     - Similarity: 0.3260
+2025-10-30 14:27:20,530 - __main__ - DEBUG -     - Source: mvp_guide.txt
+2025-10-30 14:27:20,531 - __main__ - DEBUG -     - Domain: product_development
+2025-10-30 14:27:20,531 - __main__ - DEBUG -     - Text preview: MVP (Minimum Viable Product) should focus on core functionality that solves the main problem. Avoid ...
+2025-10-30 14:27:20,541 - __main__ - DEBUG - 
+  Match #4:
+2025-10-30 14:27:20,541 - __main__ - DEBUG -     - Similarity: 0.3250
+2025-10-30 14:27:20,542 - __main__ - DEBUG -     - Source: team_guide.txt
+2025-10-30 14:27:20,542 - __main__ - DEBUG -     - Domain: team_building
+2025-10-30 14:27:20,542 - __main__ - DEBUG -     - Text preview: Team building priorities: Technical co-founder, sales/marketing lead, domain expert. Equity distribu...
+2025-10-30 14:27:20,551 - __main__ - DEBUG - 
+  Match #5:
+2025-10-30 14:27:20,552 - __main__ - DEBUG -     - Similarity: 0.3024
+2025-10-30 14:27:20,553 - __main__ - DEBUG -     - Source: scaling_guide.txt
+2025-10-30 14:27:20,553 - __main__ - DEBUG -     - Domain: scalability
+2025-10-30 14:27:20,554 - __main__ - DEBUG -     - Text preview: Scalability planning: Infrastructure that can handle 10x growth, automated processes, hiring plan, o...
+2025-10-30 14:27:20,572 - __main__ - INFO -   - Total matches found: 5
+2025-10-30 14:27:20,573 - __main__ - INFO -   - Matches included (>0.25): 5
+2025-10-30 14:27:20,573 - __main__ - INFO -   - Matches filtered out: 0
+2025-10-30 14:27:20,574 - __main__ - INFO - ============================================================
+
+2025-10-30 14:27:20,574 - __main__ - INFO - Retrieved 5 RAG contexts
+2025-10-30 14:27:20,575 - __main__ - INFO - 
+--- Web Search Check ---
+2025-10-30 14:27:20,575 - __main__ - INFO - Needs web search: False
+2025-10-30 14:27:20,576 - __main__ - INFO - 
+--- Context Summary ---
+2025-10-30 14:27:20,577 - __main__ - INFO - RAG contexts: 5
+2025-10-30 14:27:20,577 - __main__ - INFO - Web contexts: 0
+2025-10-30 14:27:20,577 - __main__ - INFO - Conversation memory: 0 turns
+2025-10-30 14:27:20,578 - __main__ - DEBUG -   - legal: Legal considerations for startups: Business struct...
+2025-10-30 14:27:20,579 - __main__ - DEBUG -   - technology: Tech stack selection should consider scalability, ...
+2025-10-30 14:27:20,580 - __main__ - DEBUG -   - product_development: MVP (Minimum Viable Product) should focus on core ...
+2025-10-30 14:27:20,580 - __main__ - INFO - Total context length: 546 chars
+2025-10-30 14:27:20,581 - __main__ - INFO - 
+--- Gemini API Call ---
+2025-10-30 14:27:20,581 - __main__ - INFO - Sending chat request to Gemini...
+2025-10-30 14:27:32,008 - __main__ - INFO - Total API calls: 2
+2025-10-30 14:27:32,009 - __main__ - INFO - ============================================================
+
+2025-10-30 14:27:32,310 - comtypes.client._managing - DEBUG - wrap_outparam(<POINTER(ISpeechObjectToken) ptr=0x18d275ef120 at 18d6db315d0>)
+2025-10-30 14:27:32,317 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x18d275ef120 at 18d6db315d0>
+2025-10-30 14:27:32,319 - comtypes.client._managing - DEBUG - wrap_outparam(<POINTER(ISpeechObjectToken) ptr=0x18d275ef120 at 18d6db47650>)
+2025-10-30 14:27:32,320 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x18d275ef120 at 18d6db47650>
+2025-10-30 14:27:32,324 - comtypes.client._managing - DEBUG - wrap_outparam(<POINTER(ISpeechObjectToken) ptr=0x18d275ef120 at 18d6db47650>)
+2025-10-30 14:27:32,331 - comtypes._post_coinit.unknwn - DEBUG - Release <POINTER(ISpeechObjectToken) ptr=0x18d275ef120 at 18d6db47650>
+2025-10-30 14:27:49,684 - git.cmd - DEBUG - Popen(['git', 'version'], cwd=C:\Users\iqras\OneDrive\Desktop\FoundersFuelFrontend, stdin=None, shell=False, universal_newlines=False)
+2025-10-30 14:27:49,860 - git.cmd - DEBUG - Popen(['git', 'rev-parse', '--show-toplevel'], cwd=C:\Users\iqras\OneDrive\Desktop\FoundersFuelFrontend, stdin=None, shell=False, universal_newlines=False)
+2025-10-30 14:27:50,112 - git.cmd - DEBUG - Popen(['git', 'remote', 'get-url', '--all', 'origin'], cwd=C:\Users\iqras\OneDrive\Desktop\FoundersFuelFrontend, stdin=None, shell=False, universal_newlines=False)
+2025-10-30 14:27:50,304 - git.cmd - DEBUG - Popen(['git', 'status', '--porcelain', '--untracked-files'], cwd=C:\Users\iqras\OneDrive\Desktop\FoundersFuelFrontend, stdin=None, shell=False, universal_newlines=False)
+2025-10-30 14:27:50,532 - git.cmd - DEBUG - Popen(['git', 'diff', '--abbrev=40', '--full-index', '-M', '--raw', '-z', '--no-color'], cwd=C:\Users\iqras\OneDrive\Desktop\FoundersFuelFrontend, stdin=None, shell=False, universal_newlines=False)
+2025-10-30 14:27:50,751 - git.cmd - DEBUG - Popen(['git', 'cat-file', '--batch-check'], cwd=C:\Users\iqras\OneDrive\Desktop\FoundersFuelFrontend, stdin=<valid stream>, shell=False, universal_newlines=False)
+2025-10-30 14:27:50,867 - git.cmd - DEBUG - Popen(['git', 'rev-list', 'origin/main..main', '--'], cwd=C:\Users\iqras\OneDrive\Desktop\FoundersFuelFrontend, stdin=None, shell=False, universal_newlines=False)
