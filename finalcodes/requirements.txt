@@ -25,7 +25,7 @@ google-search-results==2.4.2
 numpy==1.24.3
 torch>=2.1,<2.3
 numpy>=1.23,<1.26
-pinecone-client
+pinecone
 
 
 # Text-to-Speech
