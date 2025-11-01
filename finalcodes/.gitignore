@@ -18,6 +18,9 @@ dist-ssr
 *.local
 
 # Environment files
+# Ignore all .env files everywhere
+**/.env
+
 .env
 .env.*
 !.env.example
