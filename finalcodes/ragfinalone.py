@@ -117,53 +117,86 @@ class OptimizedStartupRAGEvaluator:
                 continue
 
     def setup_models(self):
-        """Initialize Gemini and Pinecone"""
+        """Initialize Gemini, Pinecone, and Drive (Logs to TERMINAL only)"""
+        
+        # ---------------- HARDCODED CONFIGURATION ----------------
+        # PASTE YOUR FOLDER ID HERE
+        TARGET_FOLDER_ID = "1fZ2p0uvCKsGtqrofcVc-SeGxq0YCmUNT" 
+        
+        print("\n" + "="*40)
+        print("⚙️  STARTING BACKEND SETUP (Hidden from User)")
+        print("="*40)
+
         try:
-            # ---------------- GEMINI SETUP ----------------
+            # ---------------- 1. GEMINI SETUP ----------------
+            print("🔹 [GEMINI] Initializing...")
             api_key = st.secrets.get("GEMINI_API_KEY")
             if not api_key:
-                st.error("❌ GEMINI_API_KEY not found in Streamlit secrets")
+                print("❌ [GEMINI] CRITICAL: API Key missing in secrets.toml")
                 return
+            
             genai.configure(api_key=api_key)
             self.gemini_model = genai.GenerativeModel('models/gemini-2.5-flash')
+            print("✅ [GEMINI] Ready")
 
-            # ---------------- PINECONE SETUP ----------------
+            # ---------------- 2. PINECONE SETUP ----------------
+            print("🔹 [PINECONE] Connecting...")
             pinecone_api_key = st.secrets.get("PINECONE_API_KEY")
             if not pinecone_api_key:
-                st.error("❌ PINECONE_API_KEY not found in Streamlit secrets")
+                print("❌ [PINECONE] CRITICAL: API Key missing in secrets.toml")
                 return
 
             pc = pinecone.Pinecone(api_key=pinecone_api_key)
             index_name = "startwise-rag-knowledge"
 
-            # 1. Check if index exists reliably
-            existing_indexes = pc.list_indexes()
-            index_names = [index.name for index in existing_indexes]
+            # Check index existence (Silent)
+            existing_indexes = [i.name for i in pc.list_indexes()]
             
-            if index_name not in index_names:
-                st.write(f"Creating Pinecone index: **{index_name}**...")
+            if index_name not in existing_indexes:
+                print(f"🔸 [PINECONE] Index '{index_name}' missing. Creating now...")
                 pc.create_index(
                     name=index_name,
-                    dimension=self.embedding_dimension,
+                    dimension=768, # Make sure this matches your embedding model
                     metric="cosine",
-                    spec=pinecone.ServerlessSpec(
-                        cloud="aws",
-                        region="us-east-1"
-                    )
+                    spec=pinecone.ServerlessSpec(cloud="aws", region="us-east-1")
                 )
-                
-            # 2. Wait explicitly for the index to be ready (robust initialization)
-            st.write(f"Waiting for index **{index_name}** to be ready...")
-            while not pc.describe_index(index_name).status['ready']:
-                time.sleep(1)
-            
-            st.write(f"✅ Pinecone index **{index_name}** is ready!")
+                # Wait loop
+                while not pc.describe_index(index_name).status['ready']:
+                    time.sleep(1)
             
             self.pinecone_index = pc.Index(index_name)
+            stats = self.pinecone_index.describe_index_stats()
+            print(f"✅ [PINECONE] Ready. Index contains {stats['total_vector_count']} vectors.")
+
+            # ---------------- 3. GOOGLE DRIVE SETUP ----------------
+            print(f"🔹 [DRIVE] Accessing Folder ID: {TARGET_FOLDER_ID}")
+            
+            # Auth using secrets
+            creds_dict = st.secrets["gcp_service_account"]
+            creds = service_account.Credentials.from_service_account_info(creds_dict)
+            service = build('drive', 'v3', credentials=creds)
+
+            # Query the hardcoded folder
+            results = service.files().list(
+                q=f"'{TARGET_FOLDER_ID}' in parents and trashed=false",
+                fields="files(id, name)"
+            ).execute()
+            items = results.get('files', [])
+
+            if not items:
+                print("⚠️ [DRIVE] No files found in the target folder.")
+            else:
+                print(f"✅ [DRIVE] Successfully loaded {len(items)} files:")
+                for f in items:
+                    print(f"   └─ {f['name']}")
+
+            print("="*40)
+            print("🚀 BACKEND READY")
+            print("="*40 + "\n")
 
         except Exception as e:
-            st.error(f"Setup error: {e}")
-            logger.error(f"Setup error details: {e}", exc_info=True)
+            # Only you see this in the terminal
+            print(f"❌ [CRITICAL SYSTEM ERROR] {e}")
 
     def setup_database(self):
         """Enhanced database setup with pitch deck storage"""
