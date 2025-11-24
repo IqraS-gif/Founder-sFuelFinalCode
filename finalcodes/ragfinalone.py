@@ -2214,9 +2214,16 @@ Provide a helpful, specific answer based on the context above. Reference sources
                 st.error("❌ GDRIVE_SERVICE_ACCOUNT missing in Streamlit secrets")
                 return None
 
-            # Load JSON from secrets
+            # NEW, FIXED CODE:
             service_json = st.secrets["GDRIVE_SERVICE_ACCOUNT"]
-            service_info = json.loads(service_json)
+
+            # 1. Strip whitespace/newlines from the start/end.
+            # 2. Replace any remaining literal newline characters (\n) with an empty string.
+            #    This converts the multiline secret into a single, clean line of JSON.
+            cleaned_json_string = service_json.strip().replace('\n', '')
+
+            # Attempt to load the cleaned string
+            service_info = json.loads(cleaned_json_string)
 
             credentials = service_account.Credentials.from_service_account_info(
                 service_info,
