@@ -271,7 +271,7 @@
 import axios from 'axios';
 
 // The base URL of our FastAPI backend
-const API_BASE_URL = 'http://127.0.0.1:8000/api';
+const API_BASE_URL = 'https://iqrasayedhassan-founders-fuel-backend.hf.space';
 
 const apiClient = axios.create({
     baseURL: API_BASE_URL,
