@@ -4,7 +4,7 @@
 
 # Service account files
 service-account.json
-*.json
+
 
 # Streamlit / backend db
 *.db
