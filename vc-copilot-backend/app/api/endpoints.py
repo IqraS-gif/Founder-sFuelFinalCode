@@ -1797,7 +1797,10 @@ class AIAnalyzer:
             if os.getenv("GEMINI_API_KEY"):
                 self.ai_model = genai.GenerativeModel("models/gemini-2.5-flash")
                 logger.info("Successfully configured AI model")
-            else: logger.error("GEMINI_API_KEY not found")
+            else:
+                logger.error("GEMINI_API_KEY not found")
+        except Exception as e:
+            logger.error(f"Failed to configure AI model: {e}")
     
     def perform_ai_analysis(self, slides: List[str], category: str, persona_desc: str, local_context: LocalAnalysisResult) -> AIAnalysisResult:
         if not self.ai_model: raise ValueError("AI model is not available.")
