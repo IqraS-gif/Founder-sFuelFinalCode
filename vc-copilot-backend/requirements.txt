@@ -19,6 +19,9 @@ textstat
 pandas
 numpy
 scikit-learn
+joblib
+pinecone-client     # <-- NEW: For RAG
+google-search-results # <-- NEW: For SerpApi
 
 # AI and Environment
 google-generativeai
