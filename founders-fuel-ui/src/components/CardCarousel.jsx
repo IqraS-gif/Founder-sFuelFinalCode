@@ -518,14 +518,14 @@ const cardData = [
     title: 'Startup Analysis Chatbot',
     description: 'Data-driven startup evaluations with an AI-powered RAG chatbot.',
     color: '252, 142, 142',
-    link: 'http://localhost:8501/', // CHANGED
+    link: 'https://foundersfuel.streamlit.app/', // CHANGED
   },
   {
     id: 5,
     title: '7 domain analysis',
     description: 'Analyzes 7 core domains + live web searching for startup evaluation.',
     color: '204, 142, 252',
-    link: 'http://localhost:8501/', // CHANGED
+    link: 'https://foundersfuel.streamlit.app/', // CHANGED
   },
 ];
 
