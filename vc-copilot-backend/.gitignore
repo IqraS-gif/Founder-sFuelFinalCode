@@ -35,7 +35,7 @@ dist-ssr
 
 
 .env
-*.json
+
 service-account.json
 *.pkl
 *.db
