@@ -1,0 +1,28 @@
+# Env files
+.env
+**/.env
+
+# Service account files
+service-account.json
+*.json
+
+# Streamlit / backend db
+*.db
+*.sqlite3
+*.pkl
+*.log
+
+# Python
+__pycache__/
+*.pyc
+
+# Node
+node_modules/
+dist/
+build/
+
+# OS / IDE
+.DS_Store
+Thumbs.db
+.vscode/
+.idea/

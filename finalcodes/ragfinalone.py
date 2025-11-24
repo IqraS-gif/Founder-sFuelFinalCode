@@ -1260,8 +1260,7 @@ logging.basicConfig(
 )
 logger = logging.getLogger(__name__)
 
-# Load environment variables
-load_dotenv()
+
 
 class OptimizedStartupRAGEvaluator:
     def __init__(self):
@@ -1351,41 +1350,45 @@ class OptimizedStartupRAGEvaluator:
         """Safe auto-play TTS for chat responses"""
         self.text_to_speech(text)
 
-    def setup_models(self):
-        """Initialize Gemini and Pinecone"""
-        try:
-            # Configure Gemini
-            api_key = os.getenv('GEMINI_API_KEY')
-            if not api_key:
-                st.error("GEMINI_API_KEY not found")
-                return
-            genai.configure(api_key=api_key)
-            self.gemini_model = genai.GenerativeModel('models/gemini-2.5-flash')
-            
-            # Initialize Pinecone
-            pinecone_api_key = os.getenv('PINECONE_API_KEY')
-            if not pinecone_api_key:
-                st.error("PINECONE_API_KEY not found")
-                return
-                
-            pc = pinecone.Pinecone(api_key=pinecone_api_key)
-            index_name = "startwise-rag-knowledge"
-            
-            try:
-                pc.describe_index(index_name)
-            except:
-                pc.create_index(
-                    name=index_name,
-                    dimension=self.embedding_dimension,
-                    metric='cosine',
-                    spec=pinecone.ServerlessSpec(cloud='aws', region='us-east-1')
+def setup_models(self):
+    """Initialize Gemini and Pinecone"""
+    try:
+        # ---------------- GEMINI FIX ----------------
+        api_key = st.secrets.get("GEMINI_API_KEY")
+        if not api_key:
+            st.error("❌ GEMINI_API_KEY not found in Streamlit secrets")
+            return
+        genai.configure(api_key=api_key)
+        self.gemini_model = genai.GenerativeModel('models/gemini-2.5-flash')
+
+        # ---------------- PINECONE FIX ----------------
+        pinecone_api_key = st.secrets.get("PINECONE_API_KEY")
+        if not pinecone_api_key:
+            st.error("❌ PINECONE_API_KEY not found in Streamlit secrets")
+            return
+
+        pc = pinecone.Pinecone(api_key=pinecone_api_key)
+        index_name = "startwise-rag-knowledge"
+
+        existing = pc.list_indexes()
+
+        if index_name not in existing:
+            pc.create_index(
+                name=index_name,
+                dimension=self.embedding_dimension,
+                metric="cosine",
+                spec=pinecone.ServerlessSpec(
+                    cloud="aws",
+                    region="us-east-1"
                 )
-                time.sleep(10)
-            
-            self.pinecone_index = pc.Index(index_name)
-            
-        except Exception as e:
-            st.error(f"Setup error: {e}")
+            )
+            time.sleep(10)
+
+        self.pinecone_index = pc.Index(index_name)
+
+    except Exception as e:
+        st.error(f"Setup error: {e}")
+
 
     def setup_database(self):
         """Enhanced database setup with pitch deck storage"""
@@ -1520,7 +1523,7 @@ class OptimizedStartupRAGEvaluator:
             logger.info(f"Query: {query}")
             logger.info(f"Max results: {max_results}")
             
-            serpapi_key = os.getenv('SERPAPI_API_KEY')
+            serpapi_key = st.secrets.get('SERPAPI_API_KEY')
             if not serpapi_key:
                 logger.warning("⚠️ SERPAPI_API_KEY not found - skipping web search")
                 return []
@@ -2250,7 +2253,16 @@ def main():
         page_icon="🚀",
         layout="wide"
     )
-    
+        # --- Create Google Drive service-account.json from Streamlit secrets ---
+    if "GDRIVE_SERVICE_ACCOUNT" in st.secrets:
+        try:
+            with open("service-account.json", "w") as f:
+                f.write(st.secrets["GDRIVE_SERVICE_ACCOUNT"])
+        except Exception as e:
+            st.error(f"Failed to create service-account.json: {e}")
+    else:
+        st.warning("GDRIVE_SERVICE_ACCOUNT missing in Streamlit secrets.")
+
     # Clean, simple styling
     st.markdown("""
     <style>
