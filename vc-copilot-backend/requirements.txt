@@ -10,7 +10,7 @@ python-multipart
 # File Processing
 pdfminer.six
 python-pptx
-
+beautifulsoup4
 # ML and NLP
 sentence-transformers
 transformers
