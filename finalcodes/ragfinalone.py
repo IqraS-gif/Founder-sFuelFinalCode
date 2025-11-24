@@ -1335,43 +1335,49 @@ class OptimizedStartupRAGEvaluator:
                 continue
 
     def setup_models(self):
-            """Initialize Gemini and Pinecone"""
-            try:
-                # ---------------- GEMINI FIX ----------------
-                api_key = st.secrets.get("GEMINI_API_KEY")
-                if not api_key:
-                    st.error("❌ GEMINI_API_KEY not found in Streamlit secrets")
-                    return
-                genai.configure(api_key=api_key)
-                self.gemini_model = genai.GenerativeModel('models/gemini-2.5-flash')
+        """Initialize Gemini and Pinecone"""
+        try:
+            # ---------------- GEMINI ----------------
+            api_key = st.secrets.get("GEMINI_API_KEY")
+            if not api_key:
+                st.error("❌ GEMINI_API_KEY not found in Streamlit secrets")
+                return
+            genai.configure(api_key=api_key)
+            self.gemini_model = genai.GenerativeModel('models/gemini-2.5-flash')
 
-                # ---------------- PINECONE FIX ----------------
-                pinecone_api_key = st.secrets.get("PINECONE_API_KEY")
-                if not pinecone_api_key:
-                    st.error("❌ PINECONE_API_KEY not found in Streamlit secrets")
-                    return
+            # ---------------- PINECONE ----------------
+            pinecone_api_key = st.secrets.get("PINECONE_API_KEY")
+            pinecone_env = st.secrets.get("PINECONE_ENV", None)
+            if not pinecone_api_key:
+                st.error("❌ PINECONE_API_KEY not found in Streamlit secrets")
+                return
 
-                pc = pinecone.Pinecone(api_key=pinecone_api_key)
-                index_name = "startwise-rag-knowledge"
+            # Initialize Pinecone client
+            if pinecone_env:
+                pinecone.init(api_key=pinecone_api_key, environment=pinecone_env)
+            else:
+                pinecone.init(api_key=pinecone_api_key)
 
-                existing = pc.list_indexes()
+            index_name = "startwise-rag-knowledge"
 
-                if index_name not in existing:
-                    pc.create_index(
-                        name=index_name,
-                        dimension=self.embedding_dimension,
-                        metric="cosine",
-                        spec=pinecone.ServerlessSpec(
-                            cloud="aws",
-                            region="us-east-1"
-                        )
-                    )
-                    time.sleep(10)
+            # Create index if it does not exist
+            existing_indexes = pinecone.list_indexes()
+            if index_name not in existing_indexes:
+                st.write(f"Creating Pinecone index: **{index_name}**...")
+                pinecone.create_index(
+                    name=index_name,
+                    dimension=self.embedding_dimension,
+                    metric="cosine"
+                )
+                # small wait to let the service stabilize
+                time.sleep(2)
 
-                self.pinecone_index = pc.Index(index_name)
+            # Attach index client
+            self.pinecone_index = pinecone.Index(index_name)
+            logger.info(f"Pinecone index '{index_name}' is ready and attached.")
 
-            except Exception as e:
-                st.error(f"Setup error: {e}")
+        except Exception as e:
+            st.error(f"Setup error: {e}")
 
     def setup_database(self):
         """Enhanced database setup with pitch deck storage"""
