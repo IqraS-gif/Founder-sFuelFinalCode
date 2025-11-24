@@ -2207,16 +2207,27 @@ Provide a helpful, specific answer based on the context above. Reference sources
             logger.error(f"Conversation save error: {e}")
 
     def authenticate_google_drive(self):
-        """Authenticate with Google Drive"""
+        """Authenticate using Streamlit secrets JSON"""
         try:
-            credentials = service_account.Credentials.from_service_account_file(
-                'service-account.json',
+            if "GDRIVE_SERVICE_ACCOUNT" not in st.secrets:
+                st.error("❌ GDRIVE_SERVICE_ACCOUNT missing in Streamlit secrets")
+                return None
+
+            # Load JSON from secrets
+            service_json = st.secrets["GDRIVE_SERVICE_ACCOUNT"]
+            service_info = json.loads(service_json)
+
+            credentials = service_account.Credentials.from_service_account_info(
+                service_info,
                 scopes=['https://www.googleapis.com/auth/drive.readonly']
             )
+
             return build('drive', 'v3', credentials=credentials)
+
         except Exception as e:
             st.error(f"Authentication failed: {e}")
             return None
+
 
     def load_evaluation_history(self) -> List[tuple]:
         """Load evaluation history"""
@@ -2254,14 +2265,7 @@ def main():
         layout="wide"
     )
         # --- Create Google Drive service-account.json from Streamlit secrets ---
-    if "GDRIVE_SERVICE_ACCOUNT" in st.secrets:
-        try:
-            with open("service-account.json", "w") as f:
-                f.write(st.secrets["GDRIVE_SERVICE_ACCOUNT"])
-        except Exception as e:
-            st.error(f"Failed to create service-account.json: {e}")
-    else:
-        st.warning("GDRIVE_SERVICE_ACCOUNT missing in Streamlit secrets.")
+  
 
     # Clean, simple styling
     st.markdown("""
