@@ -117,49 +117,53 @@ class OptimizedStartupRAGEvaluator:
                 continue
 
     def setup_models(self):
-            """Initialize Gemini and Pinecone"""
-            try:
-                # ---------------- GEMINI SETUP ----------------
-                api_key = st.secrets.get("GEMINI_API_KEY")
-                if not api_key:
-                    st.error("❌ GEMINI_API_KEY not found in Streamlit secrets")
-                    return
-                genai.configure(api_key=api_key)
-                self.gemini_model = genai.GenerativeModel('models/gemini-2.5-flash')
+        """Initialize Gemini and Pinecone"""
+        try:
+            # ---------------- GEMINI SETUP ----------------
+            api_key = st.secrets.get("GEMINI_API_KEY")
+            if not api_key:
+                st.error("❌ GEMINI_API_KEY not found in Streamlit secrets")
+                return
+            genai.configure(api_key=api_key)
+            self.gemini_model = genai.GenerativeModel('models/gemini-2.5-flash')
 
-                # ---------------- PINECONE SETUP ----------------
-                pinecone_api_key = st.secrets.get("PINECONE_API_KEY")
-                if not pinecone_api_key:
-                    st.error("❌ PINECONE_API_KEY not found in Streamlit secrets")
-                    return
+            # ---------------- PINECONE SETUP ----------------
+            pinecone_api_key = st.secrets.get("PINECONE_API_KEY")
+            if not pinecone_api_key:
+                st.error("❌ PINECONE_API_KEY not found in Streamlit secrets")
+                return
 
-                pc = pinecone.Pinecone(api_key=pinecone_api_key)
-                index_name = "startwise-rag-knowledge"
+            pc = pinecone.Pinecone(api_key=pinecone_api_key)
+            index_name = "startwise-rag-knowledge"
 
-                # 1. Check if index exists reliably using .names
-                if index_name not in pc.list_indexes().names:
-                    st.write(f"Creating Pinecone index: **{index_name}**...")
-                    pc.create_index(
-                        name=index_name,
-                        dimension=self.embedding_dimension,
-                        metric="cosine",
-                        spec=pinecone.ServerlessSpec(
-                            cloud="aws",
-                            region="us-east-1"
-                        )
+            # 1. Check if index exists reliably
+            existing_indexes = pc.list_indexes()
+            index_names = [index.name for index in existing_indexes]
+            
+            if index_name not in index_names:
+                st.write(f"Creating Pinecone index: **{index_name}**...")
+                pc.create_index(
+                    name=index_name,
+                    dimension=self.embedding_dimension,
+                    metric="cosine",
+                    spec=pinecone.ServerlessSpec(
+                        cloud="aws",
+                        region="us-east-1"
                     )
-                    
-                # 2. Wait explicitly for the index to be ready (robust initialization)
-                st.write(f"Waiting for index **{index_name}** to be ready...")
-                while not pc.describe_index(index_name).status['ready']:
-                    time.sleep(1)
+                )
                 
-                st.write(f"✅ Pinecone index **{index_name}** is ready!")
-                
-                self.pinecone_index = pc.Index(index_name)
+            # 2. Wait explicitly for the index to be ready (robust initialization)
+            st.write(f"Waiting for index **{index_name}** to be ready...")
+            while not pc.describe_index(index_name).status['ready']:
+                time.sleep(1)
+            
+            st.write(f"✅ Pinecone index **{index_name}** is ready!")
+            
+            self.pinecone_index = pc.Index(index_name)
 
-            except Exception as e:
-                st.error(f"Setup error: {e}")
+        except Exception as e:
+            st.error(f"Setup error: {e}")
+            logger.error(f"Setup error details: {e}", exc_info=True)
 
     def setup_database(self):
         """Enhanced database setup with pitch deck storage"""
