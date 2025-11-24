@@ -9,7 +9,6 @@ service-account.json
 # Streamlit / backend db
 *.db
 *.sqlite3
-*.pkl
 *.log
 
 # Python
