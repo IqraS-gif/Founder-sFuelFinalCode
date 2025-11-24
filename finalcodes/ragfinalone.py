@@ -1097,8 +1097,11 @@ def main():
         page_icon="🚀",
         layout="wide"
     )
-        # --- Create Google Drive service-account.json from Streamlit secrets ---
-  
+
+    # ---------------- HARDCODED CONFIGURATION ----------------
+    # This ID is now locked in the code. 
+    # If you change folders in Drive, update this string here.
+    HARDCODED_DRIVE_ID = "1fZ2p0uvCKsGtqrofcVc-SeGxq0YCmUNT"
 
     # Clean, simple styling
     st.markdown("""
@@ -1129,29 +1132,19 @@ def main():
         text-align: center;
         padding: 15px;
     }
-    .metric-card {
-        background: white;
-        padding: 1rem;
+    [data-testid="stExpander"] {
         border-radius: 10px;
         border: 1px solid #e2e8f0;
-        box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
-        text-align: center;
+        transition: box-shadow 0.3s ease-in-out;
     }
-        [data-testid="stExpander"] {
-    border-radius: 10px;
-    border: 1px solid #e2e8f0;
-    transition: box-shadow 0.3s ease-in-out;
-}
-
-[data-testid="stExpander"]:hover {
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-}
-                        
-[data-testid="stExpander"] summary p {
-    font-size: 22px !important;
-    font-weight: bold !important;
-            color:#9EFCFF !important;
-}
+    [data-testid="stExpander"]:hover {
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    [data-testid="stExpander"] summary p {
+        font-size: 22px !important;
+        font-weight: bold !important;
+        color:#9EFCFF !important;
+    }
     .st-expander-content div {
         font-size: 19px !important;
     }
@@ -1169,62 +1162,45 @@ def main():
     
     # Initialize evaluator and check KB status on first run
     if 'evaluator' not in st.session_state:
-        with st.spinner("Initializing evaluator and checking knowledge base..."):
+        with st.spinner("Initializing system..."):
             st.session_state.evaluator = OptimizedStartupRAGEvaluator()
             # Automatically check if the KB is already built in Pinecone
             st.session_state.kb_loaded = st.session_state.evaluator.check_knowledge_base_status()
 
-    # Simple sidebar
+    # ---------------- CLEAN SIDEBAR ----------------
     with st.sidebar:
-        st.markdown("### 🛠️ Setup & Configuration")
+        st.markdown("### ⚙️ Preferences")
         
-        # TTS Toggle for chat only
+        # TTS Toggle (User facing feature)
         tts_enabled = st.toggle("🔊 Enable Chat TTS", value=st.session_state.get('tts_enabled', True))
         st.session_state.tts_enabled = tts_enabled
         
-        if tts_enabled:
-            st.success("🔊 Chat TTS Active")
-        else:
-            st.warning("🔇 Chat TTS Disabled")
-        
         st.divider()
         
-        parent_folder_id = st.text_input(
-            "Google Drive Knowledge Folder ID", 
-            value="1fZ2p0uvCKsGtqrofcVc-SeGxq0YCmUNT"
-        )
+        # Simple Status Indicator
+        if st.session_state.kb_loaded:
+            st.success("✅ System Online")
+        else:
+            st.warning("⚠️ Knowledge Base Offline")
         
-        if st.button("🔧 Build / Rebuild Knowledge Base", type="primary"):
+        # Simplified Update Button (No ID Input)
+        # This uses the hardcoded ID to refresh the database
+        if st.button("🔄 Update Database", help="Click to re-scan Google Drive and update the AI's knowledge."):
             service = st.session_state.evaluator.authenticate_google_drive()
             if service:
-                with st.spinner("Building knowledge base..."):
-                    if st.session_state.evaluator.build_knowledge_base(service, parent_folder_id):
+                with st.spinner("Updating knowledge base..."):
+                    if st.session_state.evaluator.build_knowledge_base(service, HARDCODED_DRIVE_ID):
                         st.session_state.kb_loaded = True
-                        st.success("Knowledge base ready!")
+                        st.success("Update Complete!")
+                        time.sleep(1)
                         st.rerun()
-        
-        # Status
-        if st.session_state.kb_loaded:
-            st.success("✅ Knowledge Base Ready")
-        else:
-            st.warning("⚠️ Knowledge Base Not Loaded")
-        
-        st.divider()
-        
-        # Metrics
-        st.markdown("### 📈 Usage Metrics")
-        col1, col2 = st.columns(2)
-        with col1:
-            st.metric("Gemini Calls", st.session_state.evaluator.api_call_count)
-        with col2:
-            st.metric("Session", st.session_state.evaluator.user_session_id[-6:])
 
-    # Main content
+    # Main content guard clause
     if not st.session_state.kb_loaded:
-        st.info("Please build the knowledge base first using the sidebar to unlock all features.")
+        st.info("System is initializing. Please click 'Update Database' in the sidebar if this persists.")
         return
 
-    # Tabs - Reordered to put evaluation first
+    # Tabs
     tab1, tab2 = st.tabs(["📊 7-Domain Evaluation", "💬 AI Chat"])
     
     with tab1:
@@ -1243,13 +1219,10 @@ def main():
         if uploaded_files:
             st.success(f"📄 {len(uploaded_files)} file(s) uploaded!")
             
-            for file in uploaded_files:
-                st.write(f"• **{file.name}** ({file.size:,} bytes)")
-            
             with st.spinner("Processing files..."):
                 uploaded_content = st.session_state.evaluator.process_uploaded_files(uploaded_files)
                 if uploaded_content:
-                    st.success("✅ Documents processed and ready for evaluation!")
+                    st.success("✅ Documents processed!")
         
         st.divider()
         
@@ -1298,19 +1271,7 @@ def main():
                         with st.expander(title, expanded=False):
                             st.markdown(content)
                 
-                # Metrics
-                st.markdown("### 📊 Evaluation Metrics")
-                evaluation_time = time.time() - start_time
-                
-                col1, col2, col3, col4 = st.columns(4)
-                with col1:
-                    st.metric("🔥 API Calls", st.session_state.evaluator.api_call_count)
-                with col2:
-                    st.metric("⏱️ Time", f"{evaluation_time:.1f}s")
-                with col3:
-                    st.metric("📚 Sources", len(st.session_state.evaluator.conversation_memory[-1]['contexts']) if st.session_state.evaluator.conversation_memory else 0)
-                with col4:
-                    st.metric("📁 Files", "Yes" if uploaded_content else "No")
+                # NOTE: Metrics section removed from UI (visible in terminal only)
                 
                 # Export
                 st.markdown("### 💾 Export Report")
@@ -1326,11 +1287,6 @@ IDEA: {startup_idea}
 
 EVALUATION:
 {chr(10).join([f"{title}:{chr(10)}{content}{chr(10)}" for (_, title), content in zip(section_config, evaluation_sections.values()) if content.strip()])}
-
-METRICS:
-- API Calls: {st.session_state.evaluator.api_call_count}
-- Time: {evaluation_time:.1f}s
-- Session: {st.session_state.evaluator.user_session_id}
 """
                     
                     st.download_button(
@@ -1345,12 +1301,7 @@ METRICS:
                         "startup_name": startup_name or "Not specified",
                         "startup_idea": startup_idea,
                         "evaluation_sections": evaluation_sections,
-                        "metadata": {
-                            "api_calls": st.session_state.evaluator.api_call_count,
-                            "time": evaluation_time,
-                            "timestamp": datetime.now().isoformat(),
-                            "uploaded_files": uploaded_files_info
-                        }
+                        "timestamp": datetime.now().isoformat()
                     }
                     
                     st.download_button(
@@ -1381,10 +1332,9 @@ METRICS:
             else:
                 with st.chat_message("assistant"):
                     st.write(msg['content'])
-                    
-                    # Context info
+                    # Context info kept for chat as it builds trust
                     if msg.get('context_count', 0) > 0:
-                        st.info(f"📚 Used {msg['context_count']} knowledge sources")
+                        st.caption(f"📚 Used {msg['context_count']} knowledge sources")
         
         # Chat input
         user_input = st.chat_input("Ask about markets, competitors, tech stacks...")
@@ -1403,7 +1353,6 @@ METRICS:
                 
                 st.session_state.evaluator.save_conversation(user_input, response, len(contexts))
                 
-                # Fixed: Queue TTS instead of direct threading
                 if st.session_state.get('tts_enabled', True):
                     st.session_state.evaluator.text_to_speech(response)
             
@@ -1411,19 +1360,7 @@ METRICS:
 
     # Footer
     st.markdown("---")
-    col1, col2, col3 = st.columns(3)
-    
-    with col1:
-        st.markdown("**🔧 Tech Stack**")
-        st.caption("Streamlit + Gemini + Pinecone")
-    
-    with col2:
-        st.markdown("**📊 Performance**") 
-        st.caption("Single API Call Optimization")
-    
-    with col3:
-        st.markdown("**🌐 Data Sources**")
-        st.caption("RAG + Live Web Intelligence")
+    st.caption("Founder's Fuel AI • Powered by Gemini & Pinecone")
 
     # Cleanup on exit
     import atexit
@@ -1431,7 +1368,6 @@ METRICS:
         if 'evaluator' in st.session_state:
             st.session_state.evaluator.cleanup_tts()
     atexit.register(cleanup)
-
 
 if __name__ == "__main__":
     main()
