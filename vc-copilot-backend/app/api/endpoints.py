@@ -1597,8 +1597,6 @@
 #     except Exception as e:
 #         logger.error(f"Explanation error: {e}", exc_info=True)
 #         raise HTTPException(status_code=500, detail="Error during explanation.")
-
-
 import uuid
 import json
 import re
@@ -1792,12 +1790,13 @@ class AIAnalyzer:
     def __init__(self):
         self.ai_model = None
         self.setup_ai_model()
+    
     def setup_ai_model(self):
         try:
             if os.getenv("GEMINI_API_KEY"):
                 self.ai_model = genai.GenerativeModel("models/gemini-2.5-flash")
                 logger.info("Successfully configured AI model")
-            else:
+            else: 
                 logger.error("GEMINI_API_KEY not found")
         except Exception as e:
             logger.error(f"Failed to configure AI model: {e}")
