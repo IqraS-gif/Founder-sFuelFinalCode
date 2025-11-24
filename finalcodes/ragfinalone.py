@@ -1333,62 +1333,45 @@ class OptimizedStartupRAGEvaluator:
             except Exception as e:
                 logger.error(f"TTS worker error: {e}")
                 continue
-    
-    def text_to_speech(self, text: str):
-        """Queue text for speech synthesis (thread-safe)"""
-        try:
-            if not st.session_state.get('tts_enabled', False) or not self.tts_engine:
-                return
-            
-            # Add text to queue for processing
-            self.tts_queue.put(text)
-                
-        except Exception as e:
-            logger.error(f"TTS queue error: {e}")
-    
-    def auto_play_tts(self, text: str):
-        """Safe auto-play TTS for chat responses"""
-        self.text_to_speech(text)
 
-def setup_models(self):
-    """Initialize Gemini and Pinecone"""
-    try:
-        # ---------------- GEMINI FIX ----------------
-        api_key = st.secrets.get("GEMINI_API_KEY")
-        if not api_key:
-            st.error("❌ GEMINI_API_KEY not found in Streamlit secrets")
-            return
-        genai.configure(api_key=api_key)
-        self.gemini_model = genai.GenerativeModel('models/gemini-2.5-flash')
+    def setup_models(self):
+            """Initialize Gemini and Pinecone"""
+            try:
+                # ---------------- GEMINI FIX ----------------
+                api_key = st.secrets.get("GEMINI_API_KEY")
+                if not api_key:
+                    st.error("❌ GEMINI_API_KEY not found in Streamlit secrets")
+                    return
+                genai.configure(api_key=api_key)
+                self.gemini_model = genai.GenerativeModel('models/gemini-2.5-flash')
 
-        # ---------------- PINECONE FIX ----------------
-        pinecone_api_key = st.secrets.get("PINECONE_API_KEY")
-        if not pinecone_api_key:
-            st.error("❌ PINECONE_API_KEY not found in Streamlit secrets")
-            return
+                # ---------------- PINECONE FIX ----------------
+                pinecone_api_key = st.secrets.get("PINECONE_API_KEY")
+                if not pinecone_api_key:
+                    st.error("❌ PINECONE_API_KEY not found in Streamlit secrets")
+                    return
 
-        pc = pinecone.Pinecone(api_key=pinecone_api_key)
-        index_name = "startwise-rag-knowledge"
+                pc = pinecone.Pinecone(api_key=pinecone_api_key)
+                index_name = "startwise-rag-knowledge"
 
-        existing = pc.list_indexes()
+                existing = pc.list_indexes()
 
-        if index_name not in existing:
-            pc.create_index(
-                name=index_name,
-                dimension=self.embedding_dimension,
-                metric="cosine",
-                spec=pinecone.ServerlessSpec(
-                    cloud="aws",
-                    region="us-east-1"
-                )
-            )
-            time.sleep(10)
+                if index_name not in existing:
+                    pc.create_index(
+                        name=index_name,
+                        dimension=self.embedding_dimension,
+                        metric="cosine",
+                        spec=pinecone.ServerlessSpec(
+                            cloud="aws",
+                            region="us-east-1"
+                        )
+                    )
+                    time.sleep(10)
 
-        self.pinecone_index = pc.Index(index_name)
+                self.pinecone_index = pc.Index(index_name)
 
-    except Exception as e:
-        st.error(f"Setup error: {e}")
-
+            except Exception as e:
+                st.error(f"Setup error: {e}")
 
     def setup_database(self):
         """Enhanced database setup with pitch deck storage"""
@@ -1424,6 +1407,24 @@ def setup_models(self):
             conn.close()
         except Exception as e:
             st.error(f"Database setup error: {e}")
+
+    def text_to_speech(self, text: str):
+        """Queue text for speech synthesis (thread-safe)"""
+        try:
+            if not st.session_state.get('tts_enabled', False) or not self.tts_engine:
+                return
+            
+            # Add text to queue for processing
+            self.tts_queue.put(text)
+            
+        except Exception as e:
+            logger.error(f"TTS queue error: {e}")
+
+    def auto_play_tts(self, text: str):
+        """Safe auto-play TTS for chat responses"""
+        self.text_to_speech(text)
+
+
 
     def check_knowledge_base_status(self) -> bool:
         """Check if the Pinecone index has vectors."""
